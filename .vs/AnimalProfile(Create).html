@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            background-image: url("images/Header Every Other Page.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p><input type="file" accept="image/*" name="image" id="file" onchange="loadImage(event)" style="display: none;"></p>
+    <p><label for="file" style="cursor: pointer;" id="Upload Image">Add image of animal here</label></p>
+    <p><img id="AddedImage" onload="Hide(event)" height="100" width="100" /></p>
+
+    <script>
+        var loadImage = function (event) {
+            var image = document.getElementById('AddedImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+    <script>
+        var Hide = function (event) {
+            var label = document.getElementById('Upload Image');
+            var image = document.getElementById('AddedFile');
+            if (image.src != null) {
+                label.hidden = true
+            }
+
+        };
+    </script>
+    <script>
+        var loadFile = function (event) {
+            var file = document.getElementById('AddedFile');
+            file.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+    <p>Color:<input type="text" name="search bar" /></p>
+    <p>Gender:<input type="text" name="search bar" /></p>
+    <p>Weight:<input type="text" name="search bar" />lbs</p>
+    <p>Age:<input type="text" name="search bar" />yrs</p>
+    <h3>Medical History</h3>
+
+    <input type="file" accept="pdf" name="MedicalDoc1" id="MedicalDoc1" onchange="loadFile(event)"></li>
+
+    <br />
+    <br />
+    <button name="Add To List">Add to List</button><button name="Request Adoption">Request Adoption</button>
+
+</body>
+</html>
